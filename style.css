@@ -1,4 +1,4 @@
-  
+ @charset "UTF-8";
 header {
     background-color: #cc7777;
     padding-top: 20px;
@@ -7,4 +7,28 @@ header {
 
 body {
     background-color: rgb(145, 163, 145);
+}
+main {
+    margin-top: 50px;
+}
+footer {
+    background-color: #cc7777;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.897);
+}
+.navbar a {
+    background: linear-gradient(to right, #de8621, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 30px;
+}
+.navbar i {
+    background: linear-gradient(to right, #de8621, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+
 }
