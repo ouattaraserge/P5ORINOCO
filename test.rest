@@ -1,0 +1,4 @@
+GET http://localhost:3000/api/cameras
+###
+GET http://localhost:3000/api/cameras/5be1ed3f1c9d44000030b061
+
