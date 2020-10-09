@@ -8,6 +8,19 @@ header {
 body {
     background-color: rgb(145, 163, 145);
 }
+main {
+    background-color: aquamarine;
+    margin-top: 50px;
+}
+footer {
+    background-color: #88E6F4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
 img {
     width: 200px;
     height: 200px;
