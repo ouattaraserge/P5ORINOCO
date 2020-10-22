@@ -1,23 +1,73 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
      
     <link href="./src/css/style.css" rel="stylesheet">
-
+<title>Orinoco - Caméras Vintage</title>
     <meta name="description" content="Vente de caméras vintage.">
-    <title>Orinoco - vente en ligne</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html" title="Orinoco">
-            <h1>Orinoco - vente en ligne</h1>
-        </a>
-            <h2>PRODUITS</h2>
-    </header>
-    <main>
+    <!--header-->
+<header>
+    <div class="container_record">
+        <nav class="col navbar nave-expand d-flex justify-content-around">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="" width="100" height="80">
+                <i class="fas fa-shopping-cart"></i>Orinoco
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="panier.html">panier(<span id="NombreArticle"></span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--Main-->
+    <main class="Mainproduit">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="selectproducts">
+                        <label for="lens">
+                            Choisissez une lentille:
+                        </label><br /> 
+                        <select name="lentille" id="lentille">
+                            <option > </option>
+
+                        </select>
+                        <div id="prodcaracteristics">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="quantity">
+                        <label for="number" id="prodquantity">Quantité</label><br />
+                        <select name="Nombre" id="Nombre">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-outline-primary" id="basketbutton">Ajouter au panier</button>
+                </div>
+            </div>
+        </div>
         
     </main>
     <footer>

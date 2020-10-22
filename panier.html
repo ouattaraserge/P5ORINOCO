@@ -1,23 +1,88 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
      
     <link href="./src/css/style.css" rel="stylesheet">
-
+<title>Orinoco - Caméras Vintage</title>
     <meta name="description" content="Vente de caméras vintage.">
-    <title>Orinoco - vente en ligne</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--HEADER-->
     <header>
-        <a href="index.html" title="Orinoco">
-            Orinoco - vente en ligne
-        </a>
-            <h2>panier</h2>
+        <div class="container_record">
+            <nav class="col navbar navbar-expand d-flex justify-content-around">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="" width="100" height="80">
+                    <i class="fas fa-shopping-cart"></i>Orinoco</a>
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Panier(<span id="NumbreArticle"></span>)</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+    <!--Main-->
+    <main class="Main_record">
+        <div class="container" id="panier">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-center"> Formulaire d'inscription :</h1>
+                </div>
+            </div>
+            <div class="row tex-center" id="formulaire0">
+                <div class="col" id="formulaire1">
+                    <div id="sectionpanier">
+                        <p id="panierVide">Votre panier est vide.</p>
+                    </div>
+                </div>
+                <div class="col" id="formulaire2">
+                    <div id="sectionformulaire">
+                        <p>Veuillez remplir ce formulaire pour poursuivre.</p>
+                        <form method="post" id="formulaire">
+                            <!--remplir le formulaire-->
+                            <fieldset>
+                                <legend>Identité</legend>
+                                <div class="row identity">
+                                    <label for="Nameform" class="labelform">Nom :</label>
+                                    <input type="text" id="Nameform" name="Nameform" placeholder="Nom" required>
+                                </div>
+                                <div class="row identity">
+                                    <label for="forename" class="labelform">Prénom :</label>
+                                    <input type="text" id="forename" name="forename" placeholder="Prénom" required>
+                                </div>
+                                <div class="row identity">
+                                    <label for="Email" class="labelform">Adresse Email</label>
+                                    <input type="email" id="Email" name="Email" placeholder="Email" required>
+                                </div>
+                            </fieldset>
+                            <fieldset class="billing">
+                                <legend>Adresse de facturation</legend>
+                                <div class="row identity">
+                                    <label for="Address" class="labelform">Adresse</label>
+                                    <input type="text" id="Address" name="Address" placeholder="Adresse" required>
+                                </div>
+                                <div class="row identity">
+                                    <label for="City" class="labelform">Ville</label>
+                                    <input type="text" id="City" name="City" placeholder="Ville" required>
+                                </div>
+                                <div class="row identity">
+                                    <label for="Postcode" class="labelform">Code postal</label>
+                                    <input type="number" id="Postcode" name="Postcode" placeholder="Code postal" required>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn" id="formbutton">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
         <footer>
@@ -41,5 +106,6 @@
         
             <div id="content"></div>  
             <script src="index.js"></script>
+            <script src="./fonctions.js"></script>
         </body>
         </html>

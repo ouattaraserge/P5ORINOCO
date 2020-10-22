@@ -1,24 +1,54 @@
  @charset "UTF-8";
 header {
-    background-color: #579c87;
+    background-color: #9edfbc;
     padding-top: 20px;
     padding-bottom: 20px;
-    height: 80px;
+    height: 220px;
     font-size: 2em;
 }
-.header_record {
-    display: flex;
-    justify-content: space-between;
+.fa .fas {
+    font-weight: 900;
+}
+.fa, .fas {
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    list-style: 1;
 }
 .nav-link {
-    display: flex;
-    flex-direction: row;
     margin-right: 60px;
     margin-bottom: 20px;
 }
+.navbar-nav {
+ display: flex;
+ justify-content: flex-end;
+ 
+}
+.navbar-brand {
+    display: inline-block;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 2em;
+    line-height: inherit;
+}
+.navbar a {
+    background: linear-gradient(to right, #de8621, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 30px; 
+}
+
+.navbar i {
+    background: linear-gradient(to right, #de8621, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
+}
 
 body {
-    background-color: rgb(145, 163, 145);
+    background-color:whitesmoke;
 }
 main {
     margin-top: 50px;
@@ -45,8 +75,7 @@ div {
 footer {
     display: flex;
    flex-direction: row;
-    background-color: #579c87;
-    color: #fdcb46;
+    background-color: #9edfbc;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -60,6 +89,9 @@ footer h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2em;
     font-weight: 500;
+    background: linear-gradient(to right, #de8621, #8f5bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 #footer {
     display: flex;
@@ -73,4 +105,6 @@ footer h2 {
 .contact {
     align-self: flex-end;
 }
-
+.justify-content-around {
+    justify-content: space-around!important;
+}
