@@ -1,4 +1,4 @@
-.container {
+/*.container {
     width: 100%;
     max-width: 1400px;
     margin: auto;
@@ -12,6 +12,7 @@
   .contenu {
     width: 100%;
   }
+  
   .choixOptions {
     width: 200px;
     margin: auto;
@@ -23,10 +24,7 @@
     font-family: "roboto", sans-serif;
     margin-bottom: 30px;
   }
-  #logo {
-    text-align: left;
-    margin-left: 10px;
-  }
+ 
   nav ul {
     list-style-type: none;
     display: flex;
@@ -49,4 +47,254 @@
   .imageCamera,
 .imageProduit {
   box-shadow: 5px 5px 3px black;
+}
+.produitCamera {
+  margin-bottom: 80px;
+}
+.produit {
+  margin: auto;
+}
+libelle-nom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 10px;
+}*/
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  text-align: center;
+  background-color: #f3e9f1;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  margin: 0;
+}
+.contenu {
+  width: 100%;
+}
+.choixOptions {
+  width: 200px;
+  margin: auto;
+}
+.choixObjectifs {
+  margin-bottom: 80px;
+}
+header {
+  font-family: "roboto", sans-serif;
+  margin-bottom: 30px;
+}
+#logo {
+  text-align: left;
+  margin-left: 10px;
+}
+nav a {
+  font-size: 1.3em;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover {
+  border-bottom: 2px black solid;
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+}
+nav li {
+  margin-right: 15px;
+}
+article a {
+  color: black;
+  text-decoration: none;
+}
+article a:hover {
+  text-decoration: underline;
+}
+#listeProduits {
+  padding: 20px 0;
+}
+.produitCamera {
+  margin-bottom: 80px;
+}
+.produit {
+  margin: auto;
+}
+.imageCamera,
+.imageProduit {
+  box-shadow: 5px 5px 3px black;
+}
+label {
+  display: flex;
+  flex-direction: column;
+}
+.carteProduit {
+  border: black 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+}
+.cameraDetail {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.libelle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.description {
+  margin: 20px 0;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  padding-top: 20px;
+}
+h2,
+p {
+  margin: 0;
+}
+h2 {
+  font-size: 1.6em;
+}
+.intitule h2 {
+  font-size: 1.4em;
+}
+.nomModele h2 {
+  font-size: 1.4em;
+}
+.libelle-nom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  margin-left: 10px;
+}
+.imagePanier {
+  width: 200px;
+  height: 170px;
+  margin-left: 10px;
+  box-shadow: 2px 2px 3px black;
+}
+.nomModele {
+  display: flex;
+  flex-direction: column;
+}
+.prixTotal {
+  text-align: left;
+}
+#prix-total-final {
+  font-size: 1.5rem;
+  text-align: left;
+  background-color: #e3ccdf;
+  font-weight: bold;
+  width: 180px;
+  margin-left: 210px;
+  border-radius: 8px;
+}
+#boutonInit {
+  height: 40px;
+  width: 120px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.recapitulatif {
+  text-align: left;
+  margin: 30px 10px;
+  border: 2px black solid;
+}
+.cout {
+  font-weight: normal;
+}
+.remerciements {
+  font-size: 1.4rem;
+}
+.boutonPanier {
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 800px) {
+  .imageLogo {
+    height: 50px;
+    width: 120px;
+  }
+}
+@media screen and (max-width: 800px) {
+  nav a {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .imageProduit {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .imageProduit,
+  .imageCamera {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .libelle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.8em;
+  }
+}
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .intitule h2 {
+    font-size: 1.1em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .nomModele h2 {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 800px) {
+  #prix-total-final p {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .libelle-nom {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  .imagePanier {
+    margin: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .prixTotal {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 800px) {
+  #prix-total-final {
+    text-align: center;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  .recapitulatif {
+    text-align: center;
+  }
 }

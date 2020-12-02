@@ -3,6 +3,7 @@ const url = "http://localhost:3000/api/cameras";
 async function getProduits() {
   try {
     const response = await fetch(url);
+    
     //Si la réponse est différente de ok, on génére une exception
     if (!response.ok) {
       throw new Error(response.status);
