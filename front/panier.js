@@ -144,7 +144,10 @@ const init = document.getElementById("boutonInit");
 init.addEventListener("click", function () {
   if (confirm("Êtes-vous sûr de vider votre panier ?")) {
     localStorage.clear();
+
     //Recharge la page
     location.reload();
+  } else {
+    alert("merci de rester avec nous");
   }
 });
