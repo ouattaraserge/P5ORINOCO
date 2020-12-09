@@ -14,7 +14,7 @@ if (contenuPanier) {
               <h2>Modèle:<br/> ${panier.nom}</h2>
               </div>
               <div class="lentillesModele">
-              <p>Objectif(s): ${panier.lentilles}</p>
+              <p>Objectif(s): ${panier.lenses}</p>
               </div>             
               <div class="descriptionModele">
               <p>Description: ${panier.description}</p>
@@ -26,7 +26,7 @@ if (contenuPanier) {
               <p>Quantité: ${panier.quantite}</p>
               </div>
               <div class="prixTotal">
-              <p><strong>Prix total modèle(s) par quantité: <br/>
+              <p><strong>Prix  modèle(s) par quantité: <br/>
               ${panier.prix * panier.quantite}€</strong></p>
               </div>
             </div>                            
@@ -36,12 +36,12 @@ if (contenuPanier) {
 } else {
   produitPanier.innerHTML = `<p>Votre panier est vide</p>`;
 }
+
 //Calcul du prix total avec un accumulateur
 const reduced = contenuPanier.reduce(
-  (accumulateur, values) => accumulateur + values.prix * values.quantite,
-  0
+  (accumulateur, values) => accumulateur + values.prix * values.quantite,0
 );
-finalCheck.innerHTML = `<p>Prix total:<br/> ${reduced}€</p>`;
+finalCheck.innerHTML = `<p>Prix total :<br/> ${reduced}€</p>`;
 formul.innerHTML = `
       <h3>Formulaire de contact</h3>
                 <form id="formulaire-form">
@@ -49,13 +49,13 @@ formul.innerHTML = `
                         <label for="prenom">Prénom: </label>
                         <input name="prenom" id="prenom" type="text"
                         pattern="[A-Za-z-éè ]{2,25}"
-                        title="Entrez uniquement des lettres" required>
+                        title="Veuillez entrer uniquement des lettres" required>
                     </div>
                     <div class="nom">
                         <label for="nom">Nom: </label>
                         <input name="nom" id="nom" type="text"
                         pattern="[A-Za-z-éè ]{2,25}"
-                        title="Entrez uniquement des lettres" required>
+                        title="Veuillez entrer uniquement des lettres" required>
                     </div>
                     <div class="adresse">
                         <label for="adresse">Adresse: </label>
@@ -66,15 +66,15 @@ formul.innerHTML = `
                         <label for="ville">Ville: </label>
                         <input name="ville" id="ville" type="text"
                         pattern="[A-Za-z-éè ]{1,25}"
-                        title="Entrez uniquement des lettres" required>
+                        title="Veuillez entrer uniquement des lettres" required>
                     </div>
                     <div class="email">
                         <label for="email">Entrez votre email: </label>
                         <input name="email" id="email" type="email" required>
-                    </div></br></br>
+                    </div><br/>
                     <div class="boutonValidation">
                         <input type="submit" value="Envoi commande">
-                    </div></br></br>
+                    </div>
                 </form>  
                 <button id="boutonInit">Vider panier</button>
                 `;
@@ -115,7 +115,7 @@ formul.addEventListener("submit", function (event) {
       console.error(error);
     }
   }
-  const form = document.getElementById("formulaire");
+  const form = document.getElementById("formulaire-form");
   postContactProduct().then((responseData) => {
     //On vérifie le formulaire
     if (!form.checkValidity()) {
@@ -123,8 +123,7 @@ formul.addEventListener("submit", function (event) {
     } else {
       const productOrderId = responseData.orderId;
       const productOrderTotalCoast = reduced;
-
-      //Vider le panier
+      //vidage du panier
       localStorage.clear();
       const productOrderTotal = { productOrderId, productOrderTotalCoast };
       localStorage.setItem("orderFinal", JSON.stringify(productOrderTotal));
@@ -138,16 +137,12 @@ formul.addEventListener("submit", function (event) {
     }
   });
 });
-
-//Vider le panier
+//Mise à zéro du panier
 const init = document.getElementById("boutonInit");
 init.addEventListener("click", function () {
-  if (confirm("Êtes-vous sûr de vider votre panier ?")) {
+  if (confirm("Voulez-vous vider votre panier ?")) {
     localStorage.clear();
-
     //Recharge la page
     location.reload();
-  } else {
-    alert("merci de rester avec nous");
   }
 });
