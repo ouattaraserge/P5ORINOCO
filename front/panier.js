@@ -1,45 +1,45 @@
-const contenuPanier = JSON.parse(localStorage.getItem("produit"));
-const produitPanier = document.getElementById("contenu-donnees");
+const basketContent = JSON.parse(localStorage.getItem("produit"));
+const basketProduct = document.getElementById("contenu-donnees");
 const finalCheck = document.getElementById("prix-total");
 const formul = document.getElementById("formulaire");
-if (contenuPanier) {
-  for (const panier of contenuPanier) {
-    produitPanier.innerHTML += `
+if (basketContent) {
+  for (const basket of basketContent) {
+    basketProduct.innerHTML += `
       <article class="carteProduit">         
           <div class="libelle">
-            <img class="imagePanier" src="${panier.image}"
+            <img class="imagePanier" src="${basket.image}"
             alt="photo de la caméra">
             <div class="libelle-nom">
               <div class="nomModele">
-              <h2>Modèle:<br/> ${panier.nom}</h2>
+              <h2>Modèle:<br/> ${basket.nom}</h2>
               </div>
               <div class="lentillesModele">
-              <p>Objectif(s): ${panier.lenses}</p>
+              <p>Objectif(s): ${basket.lenses}</p>
               </div>             
               <div class="descriptionModele">
-              <p>Description: ${panier.description}</p>
+              <p>Description: ${basket.description}</p>
               </div>
               <div class="prixModele">
-              <p><strong>Prix: ${panier.prix}€</strong></p>
+              <p><strong>Prix: ${basket.prix}€</strong></p>
               </div>
               <div class="quantiteModele">
-              <p>Quantité: ${panier.quantite}</p>
+              <p>Quantité: ${basket.quantite}</p>
               </div>
               <div class="prixTotal">
               <p><strong>Prix  modèle(s) par quantité: <br/>
-              ${panier.prix * panier.quantite}€</strong></p>
+              ${basket.prix * basket.quantite}€</strong></p>
               </div>
             </div>                            
           </div>          
       </article> `;
   }
 } else {
-  produitPanier.innerHTML = `<p>Votre panier est vide</p>`;
+  basketProduct.innerHTML = `<p>Votre panier est vide</p>`;
 }
 
 //Calcul du prix total avec un accumulateur
-const reduced = contenuPanier.reduce(
-  (accumulateur, values) => accumulateur + values.prix * values.quantite,0
+const reduced = basketContent.reduce(
+  (accumulateur, value) => accumulateur + value.prix * value.quantite,0
 );
 finalCheck.innerHTML = `<p>Prix total :<br/> ${reduced}€</p>`;
 formul.innerHTML = `
@@ -95,8 +95,8 @@ formul.addEventListener("submit", function (event) {
     email: email,
   };
   //On ajoute dans le tableau
-  const products = contenuPanier.map((panier) => {
-    return panier.id;
+  const products = basketContent.map((basket) => {
+    return basket.id;
   });
   async function postContactProduct() {
     try {

@@ -1,4 +1,4 @@
-const objectApi = document.getElementById("cameras");
+const objectFromApi = document.getElementById("cameras");
 const url = "http://localhost:3000/api/cameras";
 async function getProduits() {
   try {
@@ -19,7 +19,7 @@ getProduits()
   .then((data) => {
     console.log(data);
     data.forEach((camera) => {
-      objectApi.innerHTML += `<article class="produitCamera">
+      objectFromApi.innerHTML += `<article class="produitCamera">
               <a href="produit.html?id=${camera._id}">
                <img class="imageCamera" width= "400"  src="${
                  camera.imageUrl

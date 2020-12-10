@@ -44,8 +44,8 @@ getCameraProducts().then((camera) => {
     let opt = camera.lenses[i];
     select.innerHTML += '<option value="' + opt + '">' + opt + "</option>";
   }
-  const ajouterProduit = document.getElementById("boutonAjouter");
-  ajouterProduit.addEventListener("click", function () {
+  const addProduct = document.getElementById("boutonAjouter");
+  addProduct.addEventListener("click", function () {
 
     //Récupération de la valeur rentrée 
     const quantity = document.getElementById("nbProduits").value;
@@ -70,10 +70,10 @@ getCameraProducts().then((camera) => {
         //Récupération des données du localStorage
         const cameraPack = localStorage.getItem("produit");
         let product;
-        let panier = JSON.parse(localStorage.getItem("panier")) || [];
-        console.log(panier);
-        panier.push(cameraProduct) 
-        localStorage.setItem("panier", JSON.stringify(panier));
+        let basket = JSON.parse(localStorage.getItem("panier")) || [];
+        console.log(basket);
+        basket.push(cameraProduct) 
+        localStorage.setItem("panier", JSON.stringify(basket));
 
         //On vérifie si on a des donées dans le localStorage
         if (cameraPack != null) {
