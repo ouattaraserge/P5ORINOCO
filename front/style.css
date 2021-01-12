@@ -5,7 +5,7 @@
   margin: auto;
   text-align: center;
   background-color: whitesmoke;
-  font-family: "Open Sans", sans-serif;
+  font-family: "roboto", sans-serif;
 }
 body {
   margin: 0;
@@ -23,6 +23,40 @@ body {
 header {
   font-family: "roboto", sans-serif;
   margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f3e9f1;
+  width: 90%;
+  height: auto;
+  padding: 5%;
+}
+header i {
+  font-size: 1.7rem;
+  margin: auto;
+  color: #a435f1;
+}
+
+header a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #logo {
   text-align: left;
@@ -155,6 +189,26 @@ h2 {
 .boutonPanier {
   padding-bottom: 20px;
 }
+
+footer {
+  margin-top: 100px;
+  position: relative;
+  padding: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer p {
+  padding: auto;
+  color: black;
+}
+
+
+
 @media screen and (max-width: 800px) {
   .imageLogo {
     height: 50px;

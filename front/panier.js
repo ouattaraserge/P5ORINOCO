@@ -9,26 +9,34 @@ if (basketContent) {
           <div class="libelle">
             <img class="imagePanier" src="${basket.image}"
             alt="photo de la caméra">
+
             <div class="libelle-nom">
+
               <div class="nomModele">
-              <h2>Modèle:<br/> ${basket.nom}</h2>
+                <h2>Modèle:<br/> ${basket.nom}</h2>
               </div>
+
               <div class="lentillesModele">
-              <p>Objectif(s): ${basket.lenses}</p>
-              </div>             
+                <p>Objectif(s): ${basket.lenses}</p>
+              </div>
+
               <div class="descriptionModele">
-              <p>Description: ${basket.description}</p>
+                <p>Description: ${basket.description}</p>
               </div>
+
               <div class="prixModele">
-              <p><strong>Prix: ${basket.prix}€</strong></p>
+                <p><strong>Prix: ${basket.prix}€</strong></p>
               </div>
+
               <div class="quantiteModele">
-              <p>Quantité: ${basket.quantite}</p>
+                <p>Quantité: ${basket.quantite}</p>
               </div>
+
               <div class="prixTotal">
-              <p><strong>Prix  modèle(s) par quantité: <br/>
-              ${basket.prix * basket.quantite}€</strong></p>
+                <p><strong>Prix  modèle(s) par quantité: <br/>
+                ${basket.prix * basket.quantite}€</strong></p>
               </div>
+
             </div>                            
           </div>          
       </article> `;
@@ -51,30 +59,36 @@ formul.innerHTML = `
                         pattern="[A-Za-z-éè ]{2,25}"
                         title="Veuillez entrer uniquement des lettres" required>
                     </div>
+
                     <div class="nom">
                         <label for="nom">Nom: </label>
                         <input name="nom" id="nom" type="text"
                         pattern="[A-Za-z-éè ]{2,25}"
                         title="Veuillez entrer uniquement des lettres" required>
                     </div>
+
                     <div class="adresse">
                         <label for="adresse">Adresse: </label>
                         <input name="adresse" id="adresse" type="text"
                         pattern="[A-Za-z0-9- éè]{5,40}" required>
                     </div>
+
                     <div class="ville">
                         <label for="ville">Ville: </label>
                         <input name="ville" id="ville" type="text"
                         pattern="[A-Za-z-éè ]{1,25}"
                         title="Veuillez entrer uniquement des lettres" required>
                     </div>
+
                     <div class="email">
                         <label for="email">Entrez votre email: </label>
                         <input name="email" id="email" type="email" required>
                     </div><br/>
+
                     <div class="boutonValidation">
                         <input type="submit" value="Envoi commande">
                     </div>
+
                 </form>  
                 <button id="boutonInit">Vider panier</button>
                 `;
@@ -94,10 +108,12 @@ formul.addEventListener("submit", function (event) {
     city: city,
     email: email,
   };
+
   //On ajoute dans le tableau
   const products = basketContent.map((basket) => {
     return basket.id;
   });
+
   async function postContactProduct() {
     try {
       const response = await fetch("http://localhost:3000/api/cameras/order", {
@@ -105,6 +121,7 @@ formul.addEventListener("submit", function (event) {
         body: JSON.stringify({ contact, products }),
         headers: new Headers({ "Content-Type": "application/json" }),
       });
+
       if (response.ok) {
         const responseData = await response.json();
         return responseData;
@@ -115,6 +132,7 @@ formul.addEventListener("submit", function (event) {
       console.error(error);
     }
   }
+
   const form = document.getElementById("formulaire-form");
   postContactProduct().then((responseData) => {
     //On vérifie le formulaire
@@ -137,6 +155,7 @@ formul.addEventListener("submit", function (event) {
     }
   });
 });
+
 //Mise à zéro du panier
 const init = document.getElementById("boutonInit");
 init.addEventListener("click", function () {
