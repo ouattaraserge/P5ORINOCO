@@ -47,7 +47,7 @@ if (cart) {
 }
 
 //Calcul du prix total avec un accumulateur
-const reduced = basketContent.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
+const reduced = cart.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
 finalCheck.innerHTML = `<p>Prix total :<br/> ${reduced}€</p>`;
 formul.innerHTML = `
       <h3>Formulaire de contact</h3>
@@ -109,7 +109,7 @@ formul.addEventListener("submit", function (event) {
   };
 
   //On ajoute dans le tableau
-  const products = basketContent.map((basket) => {
+  const products = cart.map((basket) => {
     return basket.id;
   });
 

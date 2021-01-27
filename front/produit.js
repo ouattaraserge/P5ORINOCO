@@ -71,11 +71,7 @@ getCameraProducts().then((camera) => {
 
         addProduct(cameraProduct);
 
-        //fonction ajouter produit
-
         window.alert("Produit ajouté au panier");
-
-        //On stock ici dans localStorage
       } else {
         window.alert("localStorage n'est pas supporté");
       }
@@ -84,6 +80,8 @@ getCameraProducts().then((camera) => {
     }
   });
 });
+
+//Quantité dans le panier
 
 function addProduct(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
