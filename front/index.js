@@ -40,4 +40,3 @@ getProducts()
     console.error(error);
   });
 
-

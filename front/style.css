@@ -94,22 +94,27 @@ article a:hover {
 }
 .produit {
   margin: auto;
+  
 }
 .imageCamera,
 .imageProduit {
   box-shadow: 5px 5px 3px black;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: initial;
 }
 label {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
 }
 .carteProduit {
-  border: black 1px solid;
+  border: rgb(36, 27, 27) 1px solid;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
-  text-align: left;
+  text-align: center;
 }
+
 .cameraDetail {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -126,8 +131,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   padding-top: 20px;
 }
-h2,
-p {
+h2, p {
   margin: 0;
 }
 h2 {
@@ -154,7 +158,7 @@ h2 {
 }
 .nomModele {
   display: flex;
-  flex-direction: column;
+  flex-wrap:wrap;
 }
 .prixTotal {
   text-align: left;

@@ -1,7 +1,8 @@
-const basketContent = JSON.parse(localStorage.getItem("produit"));
+const basketContent = JSON.parse(localStorage.getItem("product"));
 const basketProduct = document.getElementById("contenu-donnees");
 const finalCheck = document.getElementById("prix-total");
 const formul = document.getElementById("formulaire");
+console.log(basketContent);
 if (basketContent) {
   for (const basket of basketContent) {
     basketProduct.innerHTML += `
