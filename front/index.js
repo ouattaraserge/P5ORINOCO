@@ -11,8 +11,7 @@ async function getProducts() {
       const data = await response.json();
       return data;
     }
-  }
-  catch (error) {
+  } catch (error) {
     console.error(error);
   }
 }
@@ -39,4 +38,3 @@ getProducts()
   .catch((error) => {
     console.error(error);
   });
-

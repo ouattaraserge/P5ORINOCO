@@ -14,4 +14,3 @@ textOrder.innerHTML += `<h2>Récapitulatif de commande</h2>
     <div class="remerciements">
         <p>Merci votre commande</p>
     </div>`;
-
