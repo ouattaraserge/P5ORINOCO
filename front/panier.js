@@ -1,41 +1,41 @@
-const basketContent = JSON.parse(localStorage.getItem("product"));
+const cart = JSON.parse(localStorage.getItem("cart"));
 const basketProduct = document.getElementById("contenu-donnees");
 const finalCheck = document.getElementById("prix-total");
 const formul = document.getElementById("formulaire");
-console.log(basketContent);
-if (basketContent) {
-  for (const basket of basketContent) {
+console.log(cart);
+if (cart) {
+  for (const product of cart) {
     basketProduct.innerHTML += `
       <article class="carteProduit">         
           <div class="libelle">
-            <img class="imagePanier" src="${basket.image}"
+            <img class="imagePanier" src="${product.image}"
             alt="photo de la caméra">
 
             <div class="libelle-nom">
 
               <div class="nomModele">
-                <h2>Modèle:<br/> ${basket.nom}</h2>
+                <h2>Modèle:<br/> ${product.nom}</h2>
               </div>
 
               <div class="lentillesModele">
-                <p>Objectif(s): ${basket.lenses}</p>
+                <p>Objectif(s): ${product.lenses}</p>
               </div>
 
               <div class="descriptionModele">
-                <p>Description: ${basket.description}</p>
+                <p>Description: ${product.description}</p>
               </div>
 
               <div class="prixModele">
-                <p><strong>Prix: ${basket.prix}€</strong></p>
+                <p><strong>Prix: ${product.prix}€</strong></p>
               </div>
 
               <div class="quantiteModele">
-                <p>Quantité: ${basket.quantite}</p>
+                <p>Quantité: ${product.quantite}</p>
               </div>
 
               <div class="prixTotal">
                 <p><strong>Prix  modèle(s) par quantité: <br/>
-                ${basket.prix * basket.quantite}€</strong></p>
+                ${product.prix * product.quantite}€</strong></p>
               </div>
 
             </div>                            
@@ -47,9 +47,7 @@ if (basketContent) {
 }
 
 //Calcul du prix total avec un accumulateur
-const reduced = basketContent.reduce(
-  (accumulateur, value) => accumulateur + value.prix * value.quantite,0
-);
+const reduced = basketContent.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
 finalCheck.innerHTML = `<p>Prix total :<br/> ${reduced}€</p>`;
 formul.innerHTML = `
       <h3>Formulaire de contact</h3>

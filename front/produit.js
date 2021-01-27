@@ -1,5 +1,3 @@
-   
-  
 //Affichage de la page produit seul
 
 const productDescription = document.getElementById("description");
@@ -23,13 +21,12 @@ async function getCameraProducts() {
 //Affichage du produit et ses caracteristiques
 
 getCameraProducts().then((camera) => {
-  productDescription.innerHTML +=
-   `<div class="cameraDetail">
+  productDescription.innerHTML += `<div class="cameraDetail">
             <img class="imageProduit" width= "600" src="${camera.imageUrl}  " alt="photo du produit">
               <h3 class="cameraNameProduct">Modèle: ${camera.name}</h3>
-              <div class="prix"><p><strong>Prix: ${ camera.price / 100 }€</strong></p>
+              <div class="prix"><p><strong>Prix: ${camera.price / 100}€</strong></p>
               </div>
-              <div class="description"><p>Description: ${ camera.description}</p>
+              <div class="description"><p>Description: ${camera.description}</p>
               </div>             
               <div class="choixOptions">
               </div>
@@ -39,86 +36,46 @@ getCameraProducts().then((camera) => {
                 min="1" max="5">   
               </div>
     </div>`;
-  
 
-//Choix de lentilles 
-  
+  //Choix de lentilles
+
   let select = document.getElementById("choix-objectifs");
   for (let i = 0; i < camera.lenses.length; i++) {
     let opt = camera.lenses[i];
     select.innerHTML += '<option value="' + opt + '">' + opt + "</option>";
   }
 
-//Creation du bouton "Ajouter"
-  
-  const addProduct = document.getElementById("boutonAjouter");
+  //Creation du bouton "Ajouter"
 
-  addProduct.addEventListener("click", function () {
-    
+  const addButton = document.getElementById("boutonAjouter");
+
+  addButton.addEventListener("click", function () {
     let quantity = parseInt(document.getElementById("nbProduits").value);
-    
-  
-//Vérification nombre de caméras entre 1 et 5
-    if (quantity > 0 && quantity <= 5) {
 
-//On crée l'objet cameraProduit
+    //Vérification nombre de caméras entre 1 et 5
+    if (quantity > 0 && quantity <= 5) {
+      //On crée l'objet cameraProduit
       let cameraProduct = {
         id: camera._id,
         nom: camera.name,
         image: camera.imageUrl,
-        prix: camera.price * quantity / 100,
+        prix: (camera.price * quantity) / 100,
         description: camera.description,
         lenses: camera.lenses,
-        quantite:quantity,
+        quantite: quantity,
       };
 
-//Détection du support de localStorage
+      //Détection du support de localStorage
       if (typeof localStorage != "undefined") {
+        //Récupération des données du localStorage
 
-//Récupération des données du localStorage
-        let cameraPack = localStorage.getItem("product");
-        let product;
-        let basket = JSON.parse(localStorage.getItem("panier")) || [];
-        console.log(basket);
-        basket.push(cameraProduct) 
+        addProduct(cameraProduct);
 
-        //localStorage.setItem("panier", JSON.stringify(basket));
+        //fonction ajouter produit
 
-//fonction ajouter produit
-      
+        window.alert("Produit ajouté au panier");
 
-//On vérifie si on a des données dans le localStorage
-        
-        if (cameraPack != null) {
-
-          window.alert("Produit ajouté au panier");
-
-//Sinon ajout du produit dans le panier
-          product = JSON.parse(cameraPack);
-
-          for (let i = 0; i < product.length; i++) {
-            if (product[i].id === cameraProduct.id) {
-              product[i].quantite += cameraProduct.quantite;
-                return 
-            }
-          }
-
-          product.push(cameraProduct);
-        
-
-        } else {
-          window.alert("Ajout au panier");
-
-//On initialise ici dans un tableau
-          product = [];
-
-          product.push(cameraProduct);
-        }
-
-
-//On stock ici dans localStorage
-        localStorage.setItem("product", JSON.stringify(product));
-      
+        //On stock ici dans localStorage
       } else {
         window.alert("localStorage n'est pas supporté");
       }
@@ -127,3 +84,16 @@ getCameraProducts().then((camera) => {
     }
   });
 });
+
+function addProduct(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  for (let i = 0; i < cart.length; i++) {
+    if (cart[i].id === product.id) {
+      cart[i].quantite += product.quantite;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      return;
+    }
+  }
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
