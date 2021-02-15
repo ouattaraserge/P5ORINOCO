@@ -1,17 +1,23 @@
-
 .container {
-  width: 100%;
+  width: auto;
   max-width: 1400px;
   margin: auto;
   text-align: center;
   background-color: whitesmoke;
   font-family: "roboto", sans-serif;
 }
+div {
+  display: block;
+}
 body {
-  margin: 0;
+  margin: 20px;
+  display: block;
+  text-align: center;
+  flex-wrap: nowrap;
+
 }
 .contenu {
-  width: 100%;
+  width: auto;
 }
 .choixOptions {
   width: 200px;
@@ -28,16 +34,16 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #f3e9f1;
-  width: 90%;
+  width: auto;
   height: auto;
   padding: 5%;
 }
@@ -52,11 +58,11 @@ header a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 #logo {
   text-align: left;
@@ -94,18 +100,16 @@ article a:hover {
 }
 .produit {
   margin: auto;
-  
 }
+
 .imageCamera,
 .imageProduit {
   box-shadow: 5px 5px 3px black;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-direction: initial;
+  width: 550px;
 }
 label {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
 .carteProduit {
   border: rgb(36, 27, 27) 1px solid;
@@ -122,7 +126,7 @@ label {
 .libelle {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 }
 .description {
   margin: 20px 0;
@@ -131,7 +135,8 @@ h1 {
   font-family: "Roboto", sans-serif;
   padding-top: 20px;
 }
-h2, p {
+h2,
+p {
   margin: 0;
 }
 h2 {
@@ -158,7 +163,7 @@ h2 {
 }
 .nomModele {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 .prixTotal {
   text-align: left;
@@ -202,16 +207,14 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 footer p {
   padding: auto;
   color: black;
 }
-
-
 
 @media screen and (max-width: 800px) {
   .imageLogo {
