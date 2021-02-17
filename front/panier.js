@@ -47,8 +47,8 @@ if (cart) {
 }
 
 //Calcul du prix total avec un accumulateur
-const reduced = cart.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
-finalCheck.innerHTML = `<p>Prix total :<br/> ${reduced}€</p>`;
+const totalPrice = cart.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
+finalCheck.innerHTML = `<p>Prix total :<br/> ${totalPrice}€</p>`;
 formul.innerHTML = `
       <h3>Formulaire de contact</h3>
                 <form id="formulaire-form">
@@ -139,7 +139,7 @@ formul.addEventListener("submit", function (event) {
       window.alert("Erreur de saisie");
     } else {
       const productOrderId = responseData.orderId;
-      const productOrderTotalCoast = reduced;
+      const productOrderTotalCoast = totalPrice;
       //vidage du panier
       localStorage.clear();
       const productOrderTotal = { productOrderId, productOrderTotalCoast };

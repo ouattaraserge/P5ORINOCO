@@ -3,10 +3,10 @@
 const productDescription = document.getElementById("description");
 const url = "http://localhost:3000/api/cameras/";
 const parsedUrl = new URL(window.location.href);
-const ProductUrl = parsedUrl.searchParams.get("id");
+const productUrl = parsedUrl.searchParams.get("id");
 async function getCameraProducts() {
   try {
-    const response = await fetch(url + ProductUrl);
+    const response = await fetch(url + productUrl);
     if (!response.ok) {
       throw new Error(response.status);
     } else {
