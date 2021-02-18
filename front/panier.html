@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Orinoco - Caméras Vintage</title>
+    <title>Orinoco - CAMERAS VINTAGE</title>
     <meta name="description" content="Orinoco commerce en ligne de caméras vintage">
     <meta name="robots" content="index, follow">
     <link href="style.css" rel="stylesheet">
     <meta name="description" content="Vente de caméras vintage.">
     <link rel="stylesheet" type="text/html" href="assets/css/style.css">
     <link rel="stylsheet" type="text/css" href="assets/css/reset.css">
-
 </head>
 
 <body>
-    <div class="container">
+    <h1>CAMERAS VINTAGE</h1>
+    <div class="container basket-container">
         <header>
             <a href="index.html">
                 <img class="navbar-img" src="img/logo.png" alt="logo">
@@ -24,38 +24,27 @@
                 <div class="navbar">
                     <ul class="navbar-nav">
                         <li>
-                            <a href="index.html">Accueil</a>
+                            <a href="index.html">Accueil
+                            </a>
                         </li>
                         <li>
-                            <a href="panier.html">Panier</a>
+                            <a href="confirmation.html">MES ACHATS</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
-        <main class="product-content">
-            <h1>Description produit</h1>
-        </main></br></br>
-        <section class="go-to-cart hidden">
-            <a href="./panier.html">Votre panier</a>
-        </section>
-        <div id="description"></div>
-        <div class="lensesChoice">
-            <h3>Options</h3>
-            <label for="choix-objectifs">Choisissez un objectif</label></br>
-            <select name="lense" id="choix-objectifs">
-                <option>Choisissez votre objectif</option>
-            </select>
-        </div></br>
-        <div class="boutonPanier">
-            <button type="button" id="boutonAjouter">Ajouter au panier</button>
-        </div>
+        <!--Main-->
+        <main class="basket-content">
+            <h2>Votre panier</h2>
+            <div id="contenu-donnees"></div>
+            <div id="prix-total"></div>
+            <div id="formulaire"></div>
         </main>
         <footer>
             <p> Orinoco 2020</p>
         </footer>
-    </div>
-    <script src="./produit.js"></script>
+        <script src="./panier.js"></script>
 </body>
 
 </html>

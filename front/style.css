@@ -1,6 +1,6 @@
 .container {
   width: auto;
-  max-width: 1400px;
+  height: auto;
   margin: auto;
   text-align: center;
   background-color: whitesmoke;
@@ -13,7 +13,6 @@ body {
   margin: 20px;
   display: block;
   text-align: center;
-  flex-wrap: nowrap;
 
 }
 .contenu {
@@ -47,11 +46,6 @@ header {
   height: auto;
   padding: 5%;
 }
-header i {
-  font-size: 1.7rem;
-  margin: auto;
-  color: #a435f1;
-}
 
 header a {
   display: -webkit-box;
@@ -64,23 +58,20 @@ header a {
   -ms-flex-align: center;
   align-items: center;
 }
-#logo {
-  text-align: left;
-  margin-left: 10px;
-}
+
 nav a {
-  font-size: 1.3em;
-  color: black;
+  font-size: 1.6em;
+  color:black;
   text-decoration: none;
   text-transform: uppercase;
 }
 nav a:hover {
-  border-bottom: 2px black solid;
+  border-bottom: 2px coral solid;
 }
 nav ul {
   list-style-type: none;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction:row;
 }
 nav li {
   margin-right: 15px;
@@ -91,9 +82,12 @@ article a {
 }
 article a:hover {
   text-decoration: underline;
+  text-decoration-color: blue;
 }
-#listeProduits {
-  padding: 20px 0;
+#cameras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .produitCamera {
   margin-bottom: 80px;
@@ -105,7 +99,7 @@ article a:hover {
 .imageCamera,
 .imageProduit {
   box-shadow: 5px 5px 3px black;
-  width: 55n0px;
+  width: 550px;
 }
 label {
   display: flex;
@@ -141,13 +135,17 @@ p {
   margin: 0;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 1.9em;
 }
 .intitule h2 {
-  font-size: 1.4em;
+  font-size: 1.9em;
 }
 .nomModele h2 {
   font-size: 1.4em;
+  color:coral;
+}
+h3 {
+  font-size: 1.6em;
 }
 .libelle-nom {
   display: flex;
@@ -226,11 +224,13 @@ footer p {
 @media screen and (max-width: 800px) {
   nav a {
     font-size: 1em;
+    display: flex;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 800px) {
   .imageProduit {
-    width: 500px;
+    width: auto;
   }
 }
 @media screen and (max-width: 600px) {
@@ -249,7 +249,7 @@ footer p {
 }
 @media screen and (max-width: 800px) {
   h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
 }
 @media screen and (max-width: 800px) {
