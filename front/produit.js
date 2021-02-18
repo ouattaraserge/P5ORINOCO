@@ -57,12 +57,12 @@ getCameraProducts().then((camera) => {
       //On crée l'objet cameraProduit
       let cameraProduct = {
         id: camera._id,
-        name: camera.name,
+        nom: camera.name,
         image: camera.imageUrl,
-        price: (camera.price * quantity) / 100,
+        prix: (camera.price * quantity) / 100,
         description: camera.description,
         lenses: camera.lenses,
-        quantity: quantity,
+        quantite: quantity,
       };
 
       //Détection du support de localStorage

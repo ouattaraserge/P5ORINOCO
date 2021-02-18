@@ -14,7 +14,7 @@ if (cart) {
             <div class="libelle-nom">
 
               <div class="nomModele">
-                <h2>Modèle:<br/> ${product.name}</h2>
+                <h2>Modèle:<br/> ${product.nom}</h2>
               </div>
 
               <div class="lentillesModele">
@@ -26,16 +26,16 @@ if (cart) {
               </div>
 
               <div class="prixModele">
-                <p><strong>Prix: ${product.price}€</strong></p>
+                <p><strong>Prix: ${product.prix}€</strong></p>
               </div>
 
               <div class="quantiteModele">
-                <p>Quantité: ${product.quantity}</p>
+                <p>Quantité: ${product.quantite}</p>
               </div>
 
               <div class="prixTotal">
                 <p><strong>Prix  modèle(s) par quantité: <br/>
-                ${product.price * product.quantity}€</strong></p>
+                ${product.prix * product.quantite}€</strong></p>
               </div>
 
             </div>                            
@@ -47,8 +47,9 @@ if (cart) {
 }
 
 //Calcul du prix total avec un accumulateur
-const totalPrice = cart.reduce((accumulateur, value) => accumulateur + value.price * value.quantity, 0);
+const totalPrice = cart.reduce((accumulateur, value) => accumulateur + value.prix * value.quantite, 0);
 finalCheck.innerHTML = `<p>Prix total :<br/> ${totalPrice}€</p>`;
+
 
 //Remplir le formulaire
 formul.innerHTML = `
