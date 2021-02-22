@@ -1,15 +1,13 @@
-# Orinoco #
+PROJET 5 
+ORINOCO
 
-This is the back end server for Project 5 of the Junior Web Developer path.
+On doit cloner le repository de notre projet à partir de github.
 
-### Prerequisites ###
+On ouvre ensuite l'invite de commande à partir de notre backend et proceder comme suit:
+npm install et node server.
+le serveur doit pouvoir se connecter par le port 3000 sur MongoDb Atlas
 
-You will need to have Node and `npm` installed locally on your machine.
+Voici le lien de mon repository 
 
-### Installation ###
+https://github.com/ouattaraserge/P5ORINOCO
 
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
